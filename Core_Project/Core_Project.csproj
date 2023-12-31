@@ -189,6 +189,12 @@
     <Folder Include="wwwroot\assets\vendors\owl-carousel-2\" />
     <Folder Include="wwwroot\assets\vendors\progressbar.js\" />
     <Folder Include="wwwroot\assets\vendors\js\" />
+    <Folder Include="wwwroot\assets\vendors\css\" />
+    <Folder Include="wwwroot\assets\vendors\mdi\" />
+    <Folder Include="wwwroot\assets\vendors\flag-icon-css\" />
+    <Folder Include="wwwroot\assets\css\" />
+    <Folder Include="wwwroot\assets\fonts\" />
+    <Folder Include="wwwroot\assets\images\" />
   </ItemGroup>
   <ItemGroup>
     <Content Remove="wwwroot\userimage\" />
@@ -200,6 +206,12 @@
     <Content Remove="wwwroot\assets\vendors\owl-carousel-2\" />
     <Content Remove="wwwroot\assets\vendors\progressbar.js\" />
     <Content Remove="wwwroot\assets\vendors\js\" />
+    <Content Remove="wwwroot\assets\vendors\css\" />
+    <Content Remove="wwwroot\assets\vendors\mdi\" />
+    <Content Remove="wwwroot\assets\vendors\flag-icon-css\" />
+    <Content Remove="wwwroot\assets\css\" />
+    <Content Remove="wwwroot\assets\fonts\" />
+    <Content Remove="wwwroot\assets\images\" />
   </ItemGroup>
   <ItemGroup>
     <Content Update="Views\Home\Index.cshtml">
