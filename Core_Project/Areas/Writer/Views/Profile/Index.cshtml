@@ -1,0 +1,42 @@
+@model Core_Project.Areas.Writer.Models.UserEditViewModel
+@{
+    ViewData["Title"] = "Index";
+    Layout = "~/Views/Shared/_WriterLayout.cshtml";
+}
+
+    <div class="col-12 grid-margin stretch-card">
+        <div class="card">
+            <div class="card-body">
+                <h4 class="card-title">Edit Profile Information</h4>
+                <form class="forms-sample" method="post" enctype="multipart/form-data">
+                    <div class="form-group">
+                        <label for="exampleInputName1">Name</label>
+                        <input type="text" class="form-control" asp-for="Name" placeholder="Name">
+                    </div>
+                    <div class="form-group">
+                        <label for="exampleInputName1">Last Name</label>
+                        <input type="text" class="form-control" asp-for="LastName" placeholder="Last Name">
+                    </div>
+                    <div class="form-group">
+                        <label for="exampleInputPassword4">Password</label>
+                        <input type="password" asp-for="Password" class="form-control" name="Password" id="exampleInputPassword4" placeholder="Password">
+                    </div>
+                    <div class="form-group">
+                        <label for="exampleInputPassword4">Confirmation Password</label>
+                        <input type="password" asp-for="ConfirmPassword" class="form-control" name="ConfirmPassword" id="exampleInputPassword4" placeholder="Confirmation Password">
+                    </div>
+                    <div class="form-group">
+                        <div class="custom-file">
+                            <input type="file" asp-for="Image" id="customFileLang" lang="en-us">
+                            <label class="custom-file-label" for="customFileLang">Select Picture</label>
+                        </div>
+                    </div>
+                    <button type="submit" class="btn btn-primary mr-2">Submit</button>
+                    <button class="btn btn-light">Cancel</button>
+                </form>
+
+               
+            </div>
+        </div>
+    </div>
+

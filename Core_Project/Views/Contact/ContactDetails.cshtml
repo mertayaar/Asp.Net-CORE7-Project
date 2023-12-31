@@ -1,0 +1,36 @@
+@model EntityLayer.Concrete.Message
+@{
+    ViewData["Title"] = "ContactDetails";
+    Layout = "~/Views/Shared/_NAdminLayout.cshtml";
+}
+
+
+<div class="col-12 grid-margin stretch-card">
+        <div class="card">
+            <div class="card-body">
+                <h4 class="card-title">Message Details</h4>
+
+                <form class="forms-sample">
+                    @Html.HiddenFor(x => x.MessageID)
+
+                    <div class="form-group">
+                        <label>Title</label>
+                        @Html.TextBoxFor(x => x.Name, new { @class = "form-control" })
+                    </div>
+                    <div class="form-group">
+                        <label>Mail</label>
+                        @Html.TextBoxFor(x => x.Mail, new { @class = "form-control" })
+                    </div>
+                    <div class="form-group">
+                        <label>Date</label>
+                        @Html.TextBoxFor(x => x.Date, new { @class = "form-control" })
+                    </div>
+                    <div class="form-group">
+                        <label>Content</label>
+                        @Html.TextAreaFor(x => x.Content, 6, 3, new { @class = "form-control" })
+                    </div>
+                    <a asp-action="Index" class="btn btn-primary mr-2">Contact Page </a>
+                </form>
+            </div>
+        </div>
+    </div>

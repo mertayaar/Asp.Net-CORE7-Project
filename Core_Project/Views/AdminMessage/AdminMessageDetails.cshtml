@@ -1,0 +1,42 @@
+@model EntityLayer.Concrete.WriterMessage
+@{
+    ViewData["Title"] = "AdminMessageDetails";
+    Layout = "~/Views/Shared/_NAdminLayout.cshtml";
+}
+
+
+<div class="col-12 grid-margin stretch-card">
+    <div class="card">
+        <div class="card-body">
+            <h4 class="card-title">Message Details</h4>
+
+            <form class="forms-sample">
+                @Html.HiddenFor(x => x.WriterMessageID)
+
+                <div class="form-group">
+                    <label>Title</label>
+                    @Html.TextBoxFor(x => x.Subject, new { @class = "form-control" })
+                </div>
+                <div class="form-group">
+                    <label>Sender Name</label>
+                    @Html.TextBoxFor(x => x.SenderName, new { @class = "form-control" })
+                </div>
+                <div class="form-group">
+                    <label>Receiver Name</label>
+                    @Html.TextBoxFor(x => x.ReceiverName, new { @class = "form-control" })
+                </div>
+                <div class="form-group">
+                    <label>Date</label>
+                    @Html.TextBoxFor(x => x.Date, new { @class = "form-control" })
+                </div>
+                <div class="form-group">
+                    <label>Content</label>
+                    @Html.TextAreaFor(x => x.Content, 6, 3, new { @class = "form-control" })
+                </div>
+                <a asp-action="AdminSendMessage" asp-route-id="@Model.WriterMessageID" class="btn btn-outline-success mr-2">Reply</a>
+                <a asp-action="AdminInbox" class="btn btn-outline-primary mr-2">Admin Inbox</a>
+                <a asp-action="AdminOutbox" class="btn btn-outline-warning mr-2">Admin Outbox</a>
+            </form>
+        </div>
+    </div>
+</div>

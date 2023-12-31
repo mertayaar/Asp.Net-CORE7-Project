@@ -1,0 +1,24 @@
+@using EntityLayer.Concrete
+@model List<Announcement>
+
+<li class="nav-item dropdown border-left">
+    <a class="nav-link count-indicator dropdown-toggle" id="notificationDropdown" href="#" data-toggle="dropdown">
+        <i class="far fa-bell"></i>
+        <span class="badge badge-danger navbar-badge" style="font-size: .7rem !important;">@ViewBag.Count</span>
+    </a>
+    <div class="dropdown-menu dropdown-menu-right navbar-dropdown preview-list" aria-labelledby="notificationDropdown">
+        <h6 class="p-3 mb-0">Notifications</h6>
+        @foreach (var item in Model)
+        {
+            <div class="dropdown-divider"></div>
+            <a href="/Writer/Default/Index/" class="dropdown-item">
+                <i class="fas fa-envelope mr-2">@item.Title</i> 
+                <span class="float-right text-muted text-sm">@(((DateTime)item.Date).ToString("MM-dd-yyyy"))</span>
+            </a>
+        }
+
+
+        <div class="dropdown-divider"></div>
+        <p class="p-3 mb-0 text-center">See all notifications</p>
+    </div>
+</li>

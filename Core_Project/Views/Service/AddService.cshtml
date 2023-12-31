@@ -1,0 +1,30 @@
+@model EntityLayer.Concrete.Service
+@{
+    ViewData["Title"] = "AddService";
+    Layout = "~/Views/Shared/_NAdminLayout.cshtml";
+}
+
+@using (Html.BeginForm("AddService", "Service", FormMethod.Post))
+{
+    <div class="col-12 grid-margin stretch-card">
+        <div class="card">
+            <div class="card-body">
+                <h4 class="card-title">Add Service Form</h4>
+
+                <form class="forms-sample">
+                    <div class="form-group">
+                        <label>Title</label>
+                        <input type="text" class="form-control" name="Title">
+                    </div>
+                    <div class="form-group">
+                        <label>ImageUrl</label>
+                        <input type="text" class="form-control" name="ImageUrl">
+                    </div>
+                
+                    <button type="submit" class="btn btn-primary mr-2">Save</button>
+                    <a href="/Service/Index/" class="btn btn-dark">Cancel</a>
+                </form>
+            </div>
+        </div>
+    </div>
+}

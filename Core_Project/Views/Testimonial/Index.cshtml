@@ -1,0 +1,49 @@
+@using EntityLayer.Concrete
+@model List<Testimonial>
+@{
+    ViewData["Title"] = "Index";
+    Layout = "~/Views/Shared/_NAdminLayout.cshtml";
+}
+
+<div class="row ">
+    <div class="col-12 grid-margin">
+        <div class="card">
+            <div class="card-body">
+                <div class="page-header">
+                    <h4 class="page-title"> Referance List </h4>
+                    <h4><a href="/Testimonial/AddTestimonial/" class="btn btn-outline-primary">Add a Referance</a></h4>
+                </div>
+                
+                <div class="table-responsive">
+                    <table class="table">
+                        <thead>
+                            <tr>
+                                <th> # </th>
+                                <th> Company </th>
+                                <th> Title </th>
+                                <th> Details </th>
+                                <th> Delete </th>
+
+                            </tr>
+                        </thead>
+                        <tbody>
+                            @foreach (var item in Model)
+                            {
+                                <tr>
+                                    <td>
+                                        <img src="@item.ImageUrl" alt="image" />
+                                        <span class="pl-2"> @item.Name</span>
+                                    </td>
+                                    <td> @item.Company </td>
+                                    <td> @item.Title </td>
+                                    <td><a href="/Testimonial/EditTestimonial/@item.TestimonialID" class="btn btn-outline-info">Details</a></td>
+                                    <td><a href="/Testimonial/DeleteTestimonial/@item.TestimonialID" class="btn btn-outline-danger">Delete</a></td>
+                                </tr>
+                            }
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

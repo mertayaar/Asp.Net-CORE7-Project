@@ -1,0 +1,32 @@
+@model EntityLayer.Concrete.Service
+@{
+    ViewData["Title"] = "EditService";
+    Layout = "~/Views/Shared/_NAdminLayout.cshtml";
+}
+
+
+@using (Html.BeginForm("EditService", "Service", FormMethod.Post))
+{
+    <div class="col-12 grid-margin stretch-card">
+        <div class="card">
+            <div class="card-body">
+                <h4 class="card-title">Edit Service Form</h4>
+
+                <form class="forms-sample">
+                    @Html.HiddenFor(x => x.ServiceID)
+                    <br />
+                    @Html.Label("Title")
+                    @Html.TextBoxFor(x => x.Title, new { @class = "form-control" })
+                    <br />
+                    @Html.Label("Image")
+                    @Html.TextBoxFor(x => x.ImageUrl, new { @class = "form-control" })
+                    <br />
+
+                    <button class="btn btn-outline-success">Update</button>
+
+                </form>
+            </div>
+        </div>
+    </div>
+
+}

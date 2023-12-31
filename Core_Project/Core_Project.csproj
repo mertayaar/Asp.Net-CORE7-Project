@@ -1,0 +1,193 @@
+<Project Sdk="Microsoft.NET.Sdk.Web">
+
+  <PropertyGroup>
+    <TargetFramework>net7.0</TargetFramework>
+    <Nullable>enable</Nullable>
+    <ImplicitUsings>enable</ImplicitUsings>
+  </PropertyGroup>
+
+  <PropertyGroup Condition=" '$(RunConfiguration)' == 'https' " />
+  <PropertyGroup Condition=" '$(RunConfiguration)' == 'http' " />
+  <ItemGroup>
+    <PackageReference Include="Microsoft.EntityFrameworkCore.SqlServer" Version="7.0.0" />
+    <PackageReference Include="Microsoft.EntityFrameworkCore.Tools" Version="7.0.0">
+      <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
+      <PrivateAssets>all</PrivateAssets>
+    </PackageReference>
+    <PackageReference Include="Microsoft.EntityFrameworkCore" Version="7.0.0" />
+    <PackageReference Include="Microsoft.EntityFrameworkCore.Design" Version="7.0.0">
+      <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
+      <PrivateAssets>all</PrivateAssets>
+    </PackageReference>
+    <PackageReference Include="Microsoft.VisualStudio.Web.CodeGeneration.Design" Version="7.0.11" />
+    <PackageReference Include="FluentValidation.AspNetCore" Version="11.3.0" />
+    <PackageReference Include="Microsoft.AspNetCore.Identity" Version="2.2.0" />
+    <PackageReference Include="Microsoft.AspNetCore.Identity.EntityFrameworkCore" Version="7.0.0" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\DataAccessLayer\DataAccessLayer.csproj">
+      <GlobalPropertiesToRemove></GlobalPropertiesToRemove>
+    </ProjectReference>
+    <ProjectReference Include="..\BusinessLayer\BusinessLayer.csproj">
+      <GlobalPropertiesToRemove></GlobalPropertiesToRemove>
+    </ProjectReference>
+    <ProjectReference Include="..\EntityLayer\EntityLayer.csproj">
+      <GlobalPropertiesToRemove></GlobalPropertiesToRemove>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <None Remove="Views\Default\" />
+    <None Remove="ViewComponents\" />
+    <None Remove="ViewComponents\Feature\" />
+    <None Remove="Views\Shared\Components\" />
+    <None Remove="Views\Shared\Components\FeatureList\" />
+    <None Remove="ViewComponents\About\" />
+    <None Remove="Views\Shared\Components\AboutList\" />
+    <None Remove="ViewComponents\Service\" />
+    <None Remove="Views\Shared\Components\ServiceList\" />
+    <None Remove="ViewComponents\Skill\" />
+    <None Remove="Views\Shared\Components\SkillList\" />
+    <None Remove="ViewComponents\Portfolio\" />
+    <None Remove="Views\Shared\Components\PortfolioList\" />
+    <None Remove="ViewComponents\Experience\" />
+    <None Remove="Views\Shared\Components\ExperienceList\" />
+    <None Remove="ViewComponents\Testimonial\" />
+    <None Remove="Views\Shared\Components\TestimonialList\" />
+    <None Remove="ViewComponents\Contact\" />
+    <None Remove="Views\Shared\Components\SendMessage\" />
+    <None Remove="Views\Shared\Components\ContactDetails\" />
+    <None Remove="Views\Feature\" />
+    <None Remove="Views\Home\" />
+    <None Remove="Views\Skill\" />
+    <None Remove="Views\Admin\" />
+    <None Remove="ViewComponents\Admin\" />
+    <None Remove="Views\Experience\" />
+    <None Remove="Views\Portfolio\" />
+    <None Remove="Views\About\" />
+    <None Remove="Views\Service\" />
+    <None Remove="Views\Dashboard\" />
+    <None Remove="Views\Test\" />
+    <None Remove="ViewComponents\Dashboard\" />
+    <None Remove="Views\Shared\Components\FeatureStatistics\" />
+    <None Remove="Views\Shared\Components\LastProjects\" />
+    <None Remove="Views\Shared\Components\StatisticsDashboard2\" />
+    <None Remove="Views\Shared\Components\ProjectList\" />
+    <None Remove="Views\Shared\Components\MessageList\" />
+    <None Remove="Views\Shared\Components\PortfolioSlideList\" />
+    <None Remove="Views\Shared\Components\ToDoListPanel\" />
+    <None Remove="Views\Shared\Components\MapVisitor\" />
+    <None Remove="Areas\" />
+    <None Remove="Areas\Writer\" />
+    <None Remove="Areas\Writer\Controllers\" />
+    <None Remove="Areas\Writer\Data\" />
+    <None Remove="Areas\Writer\Models\" />
+    <None Remove="Areas\Writer\Views\" />
+    <None Remove="Areas\Writer\Views\Default\" />
+    <None Remove="Areas\Writer\Views\Register\" />
+    <None Remove="Areas\Writer\Views\Login\" />
+    <None Remove="Areas\Writer\Views\Profile\" />
+    <None Remove="Areas\Writer\Views\Dashboard\" />
+    <None Remove="Areas\Writer\Views\Message\" />
+    <None Remove="Areas\Writer\ViewComponents\" />
+    <None Remove="Areas\Writer\Views\Shared\" />
+    <None Remove="Areas\Writer\Views\Shared\Components\" />
+    <None Remove="Areas\Writer\Views\Shared\Components\Notification\" />
+    <None Remove="Areas\Writer\Views\Shared\Components\Navbar\" />
+    <None Remove="Views\Contact\" />
+    <None Remove="Views\AdminMessage\" />
+    <None Remove="Views\Testimonial\" />
+    <None Remove="Views\SubContact\" />
+    <None Remove="Views\SocialMedia\" />
+    <None Remove="ViewComponents\SocialMedia\" />
+    <None Remove="Views\Shared\Components\SocialMediaList\" />
+    <None Remove="Views\Shared\Components\AdminNavbarMessageList\" />
+    <None Remove="Views\Shared\Components\AdminNotificationNavbarList\" />
+    <None Remove="Views\ErrorPage\" />
+    <None Remove="Views\WriterUser\" />
+    <None Remove="Views\ExperienceAjax\" />
+    <None Remove="Views\Shared\Components\AdminSidebarProfile\" />
+    <None Remove="Views\Shared\Components\AdminNavbarProfile\" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Views\Default\" />
+    <Folder Include="ViewComponents\" />
+    <Folder Include="ViewComponents\Feature\" />
+    <Folder Include="Views\Shared\Components\" />
+    <Folder Include="Views\Shared\Components\FeatureList\" />
+    <Folder Include="ViewComponents\About\" />
+    <Folder Include="Views\Shared\Components\AboutList\" />
+    <Folder Include="ViewComponents\Service\" />
+    <Folder Include="Views\Shared\Components\ServiceList\" />
+    <Folder Include="ViewComponents\Skill\" />
+    <Folder Include="Views\Shared\Components\SkillList\" />
+    <Folder Include="ViewComponents\Portfolio\" />
+    <Folder Include="Views\Shared\Components\PortfolioList\" />
+    <Folder Include="ViewComponents\Experience\" />
+    <Folder Include="Views\Shared\Components\ExperienceList\" />
+    <Folder Include="ViewComponents\Testimonial\" />
+    <Folder Include="Views\Shared\Components\TestimonialList\" />
+    <Folder Include="ViewComponents\Contact\" />
+    <Folder Include="Views\Shared\Components\SendMessage\" />
+    <Folder Include="Views\Shared\Components\ContactDetails\" />
+    <Folder Include="Views\Feature\" />
+    <Folder Include="Views\Home\" />
+    <Folder Include="Views\Skill\" />
+    <Folder Include="Views\Admin\" />
+    <Folder Include="ViewComponents\Admin\" />
+    <Folder Include="Views\Experience\" />
+    <Folder Include="Views\Portfolio\" />
+    <Folder Include="Views\About\" />
+    <Folder Include="Views\Service\" />
+    <Folder Include="Views\Dashboard\" />
+    <Folder Include="Views\Test\" />
+    <Folder Include="ViewComponents\Dashboard\" />
+    <Folder Include="Views\Shared\Components\FeatureStatistics\" />
+    <Folder Include="Views\Shared\Components\LastProjects\" />
+    <Folder Include="Views\Shared\Components\StatisticsDashboard2\" />
+    <Folder Include="Views\Shared\Components\ProjectList\" />
+    <Folder Include="Views\Shared\Components\MessageList\" />
+    <Folder Include="Views\Shared\Components\PortfolioSlideList\" />
+    <Folder Include="Views\Shared\Components\ToDoListPanel\" />
+    <Folder Include="Views\Shared\Components\MapVisitor\" />
+    <Folder Include="Areas\" />
+    <Folder Include="Areas\Writer\" />
+    <Folder Include="Areas\Writer\Controllers\" />
+    <Folder Include="Areas\Writer\Data\" />
+    <Folder Include="Areas\Writer\Models\" />
+    <Folder Include="Areas\Writer\Views\" />
+    <Folder Include="Areas\Writer\Views\Default\" />
+    <Folder Include="Areas\Writer\Views\Register\" />
+    <Folder Include="Areas\Writer\Views\Login\" />
+    <Folder Include="Areas\Writer\Views\Profile\" />
+    <Folder Include="wwwroot\userimage\" />
+    <Folder Include="Areas\Writer\Views\Dashboard\" />
+    <Folder Include="Areas\Writer\Views\Message\" />
+    <Folder Include="Areas\Writer\ViewComponents\" />
+    <Folder Include="Areas\Writer\Views\Shared\" />
+    <Folder Include="Areas\Writer\Views\Shared\Components\" />
+    <Folder Include="Areas\Writer\Views\Shared\Components\Notification\" />
+    <Folder Include="Areas\Writer\Views\Shared\Components\Navbar\" />
+    <Folder Include="Views\Contact\" />
+    <Folder Include="Views\AdminMessage\" />
+    <Folder Include="Views\Testimonial\" />
+    <Folder Include="Views\SubContact\" />
+    <Folder Include="Views\SocialMedia\" />
+    <Folder Include="ViewComponents\SocialMedia\" />
+    <Folder Include="Views\Shared\Components\SocialMediaList\" />
+    <Folder Include="Views\Shared\Components\AdminNavbarMessageList\" />
+    <Folder Include="Views\Shared\Components\AdminNotificationNavbarList\" />
+    <Folder Include="Views\ErrorPage\" />
+    <Folder Include="Views\WriterUser\" />
+    <Folder Include="Views\ExperienceAjax\" />
+    <Folder Include="Views\Shared\Components\AdminSidebarProfile\" />
+    <Folder Include="Views\Shared\Components\AdminNavbarProfile\" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Remove="wwwroot\userimage\" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Update="Views\Home\Index.cshtml">
+      <CopyToPublishDirectory>Never</CopyToPublishDirectory>
+    </Content>
+  </ItemGroup>
+</Project>

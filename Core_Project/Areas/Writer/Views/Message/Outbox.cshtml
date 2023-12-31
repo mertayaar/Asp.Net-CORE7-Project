@@ -1,0 +1,44 @@
+@using EntityLayer.Concrete
+@model List<WriterMessage>
+
+@{
+    ViewData["Title"] = "Outbox";
+    Layout = "~/Views/Shared/_WriterLayout.cshtml";
+}
+
+
+<div class="col-lg-12 grid-margin stretch-card">
+    <div class="card">
+        <div class="card-body">
+            <h4 class="card-title">Outbox</h4>
+            <div class="table-responsive">
+                <table class="table">
+                    <thead>
+                        <tr>
+                            <th>#</th>
+                            <th>Subject</th>
+                            <th>Receiver</th>
+                            <th>Date</th>
+                            <th>Details</th>
+
+                        </tr>
+                    </thead>
+                    <tbody>
+                        @foreach (var item in Model)
+                        {
+
+                            <tr>
+                                <th>@item.WriterMessageID</th>
+                                <td>@item.Subject</td>
+                                <td>@item.ReceiverName</td>
+                                <td>@(((DateTime)item.Date).ToString("MM-dd-yyyy"))</td>
+                                <td><a href="/Writer/Message/OutboxMessageDetails/@item.WriterMessageID" class="btn btn-outline-primary">Details</a></td>
+                            </tr>
+                        }
+
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+</div>

@@ -1,0 +1,23 @@
+@using Core_Project.Areas.Writer.Models
+@model IEnumerable<WriterMessageImageUrl>
+
+<div class="dropdown-menu dropdown-menu-right navbar-dropdown preview-list" aria-labelledby="messageDropdown">
+    <h6 class="p-3 mb-0">Last Messages</h6>
+    @foreach (var item in Model)
+    {
+
+
+        <div class="dropdown-divider"></div>
+        <a class="dropdown-item preview-item" href="/AdminMessage/AdminMessageDetails/@item.Id">
+            <div class="preview-thumbnail">
+                <img src="~/userimage/@item.ImageUrl" alt="image" class="rounded-circle profile-pic">
+            </div>
+            <div class="preview-item-content">
+                <p class="preview-subject ellipsis mb-1">@item.Name send you a message</p>
+                <p class="text-muted mb-0">@(((DateTime)item.Date).ToString("MM-dd-yyyy")) </p>
+            </div>
+        </a>
+    }
+    <div class="dropdown-divider"></div>
+    <p class="p-3 mb-0 text-center">4 new messages</p>
+</div>

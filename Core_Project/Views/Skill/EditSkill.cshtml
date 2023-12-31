@@ -1,0 +1,36 @@
+@model EntityLayer.Concrete.Skill
+@{
+    ViewData["Title"] = "EditSkill";
+    Layout = "~/Views/Shared/_NAdminLayout.cshtml";
+}
+
+
+@using (Html.BeginForm("EditSkill", "Skill", FormMethod.Post))
+{
+       <div class="col-12 grid-margin stretch-card">
+           <div class="card">
+               <div class="card-body">
+                   <h4 class="card-title">Edit Skill Form</h4>
+
+                   <form class="forms-sample">
+                       @Html.HiddenFor(x => x.SkillID)
+
+                       <div class="form-group">
+                           <label>Title</label>
+                           @Html.TextBoxFor(x => x.Title, new { @class = "form-control" })
+                       </div>
+                       <div class="form-group">
+                           <label>Value</label>
+                           @Html.TextBoxFor(x => x.Value, new { @class = "form-control" })
+                       </div>
+                     
+                       <button type="submit" class="btn btn-primary mr-2">Save</button>
+                       <a href="/Skill/Index/" class="btn btn-dark">Cancel</a>
+                   </form>
+               </div>
+           </div>
+       </div>
+
+
+}
+

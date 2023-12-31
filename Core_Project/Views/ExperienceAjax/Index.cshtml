@@ -1,0 +1,130 @@
+@using EntityLayer.Concrete
+@model List<Experience>
+@{
+    ViewData["Title"] = "Index";
+    Layout = "~/Views/Shared/_NAdminLayout.cshtml";
+}
+
+<div class="col-md-6">
+    <div class="p-2">
+        <button type="button" id="btngetalllist" class="btn btn-outline-primary"> Get all Experience</button>
+        <button type="button" id="btnadd" class="btn btn-outline-info"> Add Experience </button>
+        <button type="button" id="btnid" class="btn btn-outline-warning"> Get By ID </button>
+        <button type="button" id="btndelete" class="btn btn-outline-danger"> Delete </button>
+        <button type="button" id="btnupdate" class="btn btn-outline-success"> Update </button>
+    </div>
+</div>
+
+<h4 class="text-center"> Experience List </h4>
+<div class="p-2" id="listexperience">
+
+</div>
+
+<div class="p-2" id="listbyid">
+
+</div>
+
+<br />
+<div class="col-md-12">
+    <h4>Add Experience</h4>
+    <input type="text" class="form-control" id="inpName" placeholder="Position" />
+    <br />
+    <input type="text" class="form-control" id="inpCompany" placeholder="Company" />
+    <br />
+    <input type="text" class="form-control" id="inpDate" placeholder="Date" />
+    <br />
+
+</div>
+<br />
+<div class="col-md-12">
+    <h5>Get By ID</h5>
+    <input type="text" class="form-control" id="inpID" placeholder="Enter ID" />
+
+</div>
+<br />
+<div class="col-md-12">
+    <h5>Delete By ID</h5>
+    <input type="text" class="form-control" id="inpdeleteid" placeholder="Enter ID" />
+
+</div>
+
+
+@section scripts{
+    <script>$("#btngetalllist").click(function () {
+            $.ajax({
+                contentType: "application/json",
+                dataType: "json",
+                type: "GET",
+                url: "/ExperienceAjax/ListExperience/",
+
+                success: function (method) {
+                    let values = jQuery.parseJSON(method);
+                    console.log(values);
+
+                    let htmlst = "<table class=table table-bordered> <tr> <th> ID </th> <th> Title </th> <th> Company </th> <th> Date </th> </tr>";
+                    $.each(values, (index, value) => {
+                        htmlst += `<tr> <td>${value.ExperienceID}</td> <td>${value.Name}</td> <td>${value.Company}</td> <td>${value.Date}</td> </tr>`
+                    });
+                    htmlst += "</table>";
+                    $("#listexperience").html(htmlst);
+                }
+            });
+        });
+
+        $("#btnadd").click(function () {
+            let values = {
+                Name: $("#inpName").val(),
+                Company: $("#inpCompany").val(),
+                Date: $("#inpDate").val(),
+            };
+
+            $.ajax({
+                type: "POST",
+                url: "/ExperienceAjax/AddExperience/",
+                data: values,
+
+                success: function (suc) {
+                    let result = jQuery.parseJSON(suc);
+                    alert(result.Name + " added successfully");
+
+                }
+            });
+        });
+
+
+        $("#btnid").click(x => {
+            let id = $("#inpID").val();
+
+
+            $.ajax({
+                contentType: "application/json",
+                dataType: "json",
+                type: "GET",
+                url: "/ExperienceAjax/GetById/",
+                data: { ExperienceID: id },
+
+                success: function (suc) {
+                    let result = jQuery.parseJSON(suc);
+                    console.log(result);
+                    let htmlstr = `<table class="table table-hover"> <tr> <th> Experience ID </th> <td> ${result.ExperienceID} </td> </tr> <tr> <th> Experience Title </th> <td> ${result.Name} </td> </tr> </table>`;
+                    $("#listbyid").html(htmlstr);
+                }
+            });
+        });
+
+        $("#btndelete").click(x => {
+            let id = $("#inpdeleteid").val();
+
+            $.ajax({
+                url: "/ExperienceAjax/DeleteExperience/" + id,
+                type: "POST",
+                contentType: "application/json",
+                dataType: "json",
+                success: function (suc) {
+                    alert("Experience deleted successfully");
+                }
+            });
+        });</script>
+}
+
+<script src="~/lib/jquery/dist/jquery.js"></script>

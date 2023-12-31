@@ -1,0 +1,199 @@
+<ul class="nav">
+    <li class="nav-item profile">
+        <div class="profile-desc">
+            @await Component.InvokeAsync("AdminSidebarProfile")
+
+            <a href="#" id="profile-dropdown" data-toggle="dropdown"><i class="mdi mdi-dots-vertical"></i></a>
+            <div class="dropdown-menu dropdown-menu-right sidebar-dropdown preview-list" aria-labelledby="profile-dropdown">
+                <a href="/Writer/Profile/Index/" class="dropdown-item preview-item">
+                    <div class="preview-thumbnail">
+                        <div class="preview-icon bg-dark rounded-circle">
+                            <i class="mdi mdi-settings text-primary"></i>
+                        </div>
+                    </div>
+
+                    <div class="preview-item-content">
+                        <p class="preview-subject ellipsis mb-1 text-small">Account settings</p>
+                    </div>
+                </a>
+                <div class="dropdown-divider"></div>
+                <a href="/Writer/Profile/Index/" class="dropdown-item preview-item">
+                    <div class="preview-thumbnail">
+                        <div class="preview-icon bg-dark rounded-circle">
+                            <i class="mdi mdi-onepassword  text-info"></i>
+                        </div>
+                    </div>
+                    <div class="preview-item-content">
+                        <p class="preview-subject ellipsis mb-1 text-small">Change Password</p>
+                    </div>
+                </a>
+                <div class="dropdown-divider"></div>
+                <a href="/AdminMessage/AdminInbox/" class="dropdown-item preview-item">
+                    <div class="preview-thumbnail">
+                        <div class="preview-icon bg-dark rounded-circle">
+                            <i class="mdi mdi-calendar-today text-success"></i>
+                        </div>
+                    </div>
+                    <div class="preview-item-content">
+                        <p class="preview-subject ellipsis mb-1 text-small">Messages</p>
+                    </div>
+                </a>
+            </div>
+        </div>
+    </li>
+    <li class="nav-item nav-category">
+        <span class="nav-link">Navigation</span>
+    </li>
+    <li class="nav-item menu-items">
+        <a class="nav-link" href="/Dashboard/Index/">
+            <span class="menu-icon">
+                <i class="mdi mdi-speedometer"></i>
+            </span>
+            <span class="menu-title">Dashboard</span>
+        </a>
+    </li>
+    <li class="nav-item menu-items">
+        <a target="_blank" rel="noopener noreferrer" class="nav-link" href="/Writer/Default/Index/">
+            <span class="menu-icon">
+                <i class="mdi mdi-collage"></i>
+            </span>
+            <span class="menu-title">Writer Page</span>
+        </a>
+    </li>
+    <li class="nav-item menu-items">
+        <a class="nav-link" href="/Skill/Index/">
+            <span class="menu-icon">
+                <i class="mdi mdi-laptop"></i>
+            </span>
+            <span class="menu-title">Skills</span>
+        </a>
+
+    </li>
+    <li class="nav-item menu-items">
+        <a class="nav-link" href="/Experience/Index/">
+            <span class="menu-icon">
+                <i class="mdi mdi-format-list-bulleted-type"></i>
+            </span>
+            <span class="menu-title">Experiences</span>
+        </a>
+    </li>
+    <li class="nav-item menu-items">
+        <a class="nav-link" href="/ExperienceAjax/Index/">
+            <span class="menu-icon">
+                <i class="mdi mdi-format-list-bulleted-type"></i>
+            </span>
+            <span class="menu-title">Experiences Ajax</span>
+        </a>
+    </li>
+    <li class="nav-item menu-items">
+        <a class="nav-link" href="/About/Index/">
+            <span class="menu-icon">
+                <i class="mdi mdi-pencil"></i>
+            </span>
+            <span class="menu-title">About</span>
+        </a>
+    </li>
+    <li class="nav-item menu-items">
+        <a class="nav-link" href="/Feature/Index/">
+            <span class="menu-icon">
+                <i class="mdi mdi-presentation"></i>
+            </span>
+            <span class="menu-title">Features</span>
+        </a>
+    </li>
+    <li class="nav-item menu-items">
+        <a class="nav-link" href="/SocialMedia/Index/">
+            <span class="menu-icon">
+                <i class="mdi mdi-link-variant"></i>
+            </span>
+            <span class="menu-title">Social Media</span>
+        </a>
+    </li>
+    <li class="nav-item menu-items">
+        <a class="nav-link" href="/Service/Index/">
+            <span class="menu-icon">
+                <i class="mdi mdi-git"></i>
+            </span>
+            <span class="menu-title">Services</span>
+        </a>
+    </li>
+    <li class="nav-item menu-items">
+        <a target="_blank" rel="noopener noreferrer" class="nav-link" href="/Default/Index/">
+            <span class="menu-icon">
+                <i class="mdi mdi-table-large"></i>
+            </span>
+            <span class="menu-title">Go to WebPage</span>
+        </a>
+    </li>
+    <li class="nav-item menu-items">
+        <a class="nav-link" href="~/Corona-template-1.0.0/template/pages/charts/chartjs.html">
+            <span class="menu-icon">
+                <i class="mdi mdi-chart-bar"></i>
+            </span>
+            <span class="menu-title">Graphics</span>
+        </a>
+    </li>
+    <li class="nav-item menu-items">
+        <a class="nav-link" href="/Portfolio/Index/">
+            <span class="menu-icon">
+                <i class="mdi mdi-github-circle"></i>
+            </span>
+            <span class="menu-title">Projects</span>
+        </a>
+    </li>
+    <li class="nav-item menu-items">
+        <a class="nav-link" href="#messages" data-toggle="collapse" aria-expanded="false" aria-controls="messages">
+            <span class="menu-icon">
+                <i class="mdi mdi-message-outline"></i>
+            </span>
+            <span class="menu-title">Messages</span>
+            <i class="menu-arrow"></i>
+        </a>
+        <div class="collapse" id="messages">
+            <ul class="nav flex-column sub-menu">
+                <li class="nav-item"> <a class="nav-link" href="/AdminMessage/AdminInbox">Inbox</a></li>
+                <li class="nav-item"> <a class="nav-link" href="/AdminMessage/AdminOutbox">Outbox</a></li>
+
+            </ul>
+        </div>
+    </li>
+    <li class="nav-item menu-items">
+        <a class="nav-link" href="/Contact/Index/">
+            <span class="menu-icon">
+                <i class="mdi mdi-account"></i>
+            </span>
+            <span class="menu-title">Contacts</span>
+        </a>
+    </li>
+    <li class="nav-item menu-items">
+        <a class="nav-link" href="/SubContact/Index/">
+            <span class="menu-icon">
+                <i class="mdi mdi-calendar"></i>
+            </span>
+            <span class="menu-title">Contact Sub Place</span>
+        </a>
+    </li>
+    <li class="nav-item menu-items">
+        <a class="nav-link" href="/Testimonial/Index/">
+            <span class="menu-icon">
+                <i class="mdi mdi-human-greeting"></i>
+            </span>
+            <span class="menu-title">Testimonials</span>
+        </a>
+    </li>
+    <li class="nav-item menu-items">
+        <a class="nav-link" data-toggle="collapse" href="#auth" aria-expanded="false" aria-controls="auth">
+            <span class="menu-icon">
+                <i class="mdi mdi-security"></i>
+            </span>
+            <span class="menu-title">Password & Security</span>
+            <i class="menu-arrow"></i>
+        </a>
+        <div class="collapse" id="auth">
+            <ul class="nav flex-column sub-menu">
+                <li class="nav-item"> <a class="nav-link" href="/Writer/Login/Index/"> Login </a></li>
+                <li class="nav-item"> <a class="nav-link" href="/Writer/Register/Index/"> Register </a></li>
+            </ul>
+        </div>
+    </li>
+</ul>
