@@ -181,9 +181,25 @@
     <Folder Include="Views\ExperienceAjax\" />
     <Folder Include="Views\Shared\Components\AdminSidebarProfile\" />
     <Folder Include="Views\Shared\Components\AdminNavbarProfile\" />
+    <Folder Include="wwwroot\assets\" />
+    <Folder Include="wwwroot\assets\js\" />
+    <Folder Include="wwwroot\assets\vendors\" />
+    <Folder Include="wwwroot\assets\vendors\chart.js\" />
+    <Folder Include="wwwroot\assets\vendors\jvectormap\" />
+    <Folder Include="wwwroot\assets\vendors\owl-carousel-2\" />
+    <Folder Include="wwwroot\assets\vendors\progressbar.js\" />
+    <Folder Include="wwwroot\assets\vendors\js\" />
   </ItemGroup>
   <ItemGroup>
     <Content Remove="wwwroot\userimage\" />
+    <Content Remove="wwwroot\assets\" />
+    <Content Remove="wwwroot\assets\js\" />
+    <Content Remove="wwwroot\assets\vendors\" />
+    <Content Remove="wwwroot\assets\vendors\chart.js\" />
+    <Content Remove="wwwroot\assets\vendors\jvectormap\" />
+    <Content Remove="wwwroot\assets\vendors\owl-carousel-2\" />
+    <Content Remove="wwwroot\assets\vendors\progressbar.js\" />
+    <Content Remove="wwwroot\assets\vendors\js\" />
   </ItemGroup>
   <ItemGroup>
     <Content Update="Views\Home\Index.cshtml">
