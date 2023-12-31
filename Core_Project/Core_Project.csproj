@@ -159,7 +159,6 @@
     <Folder Include="Areas\Writer\Views\Register\" />
     <Folder Include="Areas\Writer\Views\Login\" />
     <Folder Include="Areas\Writer\Views\Profile\" />
-    <Folder Include="wwwroot\userimage\" />
     <Folder Include="Areas\Writer\Views\Dashboard\" />
     <Folder Include="Areas\Writer\Views\Message\" />
     <Folder Include="Areas\Writer\ViewComponents\" />
@@ -195,9 +194,12 @@
     <Folder Include="wwwroot\assets\css\" />
     <Folder Include="wwwroot\assets\fonts\" />
     <Folder Include="wwwroot\assets\images\" />
+    <Folder Include="wwwroot\images\" />
+    <Folder Include="wwwroot\images\projectImage\" />
+    <Folder Include="wwwroot\images\userImage\" />
+    <Folder Include="wwwroot\images\platformImage\" />
   </ItemGroup>
   <ItemGroup>
-    <Content Remove="wwwroot\userimage\" />
     <Content Remove="wwwroot\assets\" />
     <Content Remove="wwwroot\assets\js\" />
     <Content Remove="wwwroot\assets\vendors\" />
@@ -212,6 +214,10 @@
     <Content Remove="wwwroot\assets\css\" />
     <Content Remove="wwwroot\assets\fonts\" />
     <Content Remove="wwwroot\assets\images\" />
+    <Content Remove="wwwroot\images\" />
+    <Content Remove="wwwroot\images\projectImage\" />
+    <Content Remove="wwwroot\images\userImage\" />
+    <Content Remove="wwwroot\images\platformImage\" />
   </ItemGroup>
   <ItemGroup>
     <Content Update="Views\Home\Index.cshtml">

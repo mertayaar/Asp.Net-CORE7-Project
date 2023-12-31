@@ -1,4 +1,4 @@
-@model EntityLayer.Concrete.Portfolio
+@model Core_Project.Models.PortfolioViewModel
 @{
     ViewData["Title"] = "AddPortfolio";
     Layout = "~/Views/Shared/_NAdminLayout.cshtml";
@@ -9,33 +9,45 @@
         <div class="card-body">
             <h4 class="card-title">Add Project Form</h4>
 
-            <form class="forms-sample" method="post">
+            <form class="forms-sample" method="post" enctype="multipart/form-data">
                 <div class="form-group">
-                    <label>Name</label>
-                    @Html.TextBoxFor(x => x.Name, new { @class = "form-control" })
+                    <div class="form-group">
+                        <input type="text" class="form-control" asp-for="Name" placeholder="Project Name">
+                        <span asp-validation-for="Name" class="text-danger"></span>
+                    </div>
+                    <div class="form-group">
+                        <input type="text" class="form-control" asp-for="ProjectURL" placeholder="Project URL">
+                        <span asp-validation-for="ProjectURL" class="text-danger"></span>
+                    </div>
+                    <div class="form-group">
+                        <input type="text" asp-for="Completion" class="form-control" name="Completion" placeholder="Completion">
+                        <span asp-validation-for="Completion" class="text-danger"></span>
+                    </div>
+
+                    <div class="form-group">
+                        <input type="file" name="ProjectImage" asp-for="ProjectImage" class="file-upload-default">
+                        <div class="input-group col-xs-12">
+                            <input type="text" class="form-control file-upload-info" disabled placeholder="Upload Sample Image of Project">
+                            <span class="input-group-append">
+                                <button class="file-upload-browse btn btn-primary" type="button">Upload</button>
+                            </span>
+                        </div>
+                        <span asp-validation-for="ProjectImage" class="text-danger"></span>
+                    </div>
+                    <div class="form-group">
+                        <input type="file" name="PlatformImage" asp-for="PlatformImage" class="file-upload-default">
+                        <div class="input-group col-xs-12">
+                            <input type="text" class="form-control file-upload-info" disabled placeholder="Upload Platform Image">
+                            <span class="input-group-append">
+                                <button class="file-upload-browse btn btn-primary" type="button">Upload</button>
+                            </span>
+                        </div>
+                        <span asp-validation-for="PlatformImage" class="text-danger"></span>
+                    </div>
+                    <button type="submit" class="btn btn-outline-primary mr-2">Submit</button>
+                    <a href="/Portfolio/Index/" class="btn btn-dark">Cancel</a>
+                    
                 </div>
-                <div class="form-group">
-                    <label>Platform</label>
-                    @Html.TextBoxFor(x => x.Platform, new { @class = "form-control" })
-                    @Html.ValidationMessageFor(x => x.Platform)
-                </div>
-                <div class="form-group">
-                    <label>Project URL</label>
-                    @Html.TextBoxFor(x => x.ProjectUrl, new { @class = "form-control" })
-                    @Html.ValidationMessageFor(x => x.ProjectUrl)
-                </div>
-                <div class="form-group">
-                    <label>Image URL</label>
-                    @Html.TextBoxFor(x => x.ImageUrl, new { @class = "form-control" })
-                    @Html.ValidationMessageFor(x => x.ImageUrl)
-                </div>
-                <div class="form-group">
-                    <label>Completion</label>
-                    @Html.TextBoxFor(x => x.Value, new { @class = "form-control" })
-                    @Html.ValidationMessageFor(x => x.Value)
-                </div>
-                <button type="submit" class="btn btn-primary mr-2">Save</button>
-                <a href="/Portfolio/Index/" class="btn btn-dark">Cancel</a>
             </form>
         </div>
     </div>

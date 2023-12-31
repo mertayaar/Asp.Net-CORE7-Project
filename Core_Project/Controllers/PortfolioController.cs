@@ -5,10 +5,12 @@ using System.Linq;
 using System.Threading.Tasks;
 using BusinessLayer.Concrete;
 using BusinessLayer.ValidationRules;
+using Core_Project.Models;
 using DataAccessLayer.EntityFramework;
 using EntityLayer.Concrete;
 using FluentValidation.Results;
 using Microsoft.AspNetCore.Authorization;
+using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Mvc;
 
 namespace Core_Project.Controllers
@@ -33,25 +35,50 @@ namespace Core_Project.Controllers
 
         [HttpPost]
 
-        public IActionResult AddPortfolio(Portfolio portfolio)
+        public async Task<IActionResult> AddPortfolio(PortfolioViewModel p)
         {
+            var project = new Portfolio();
 
-            PortfolioValidator portfolioValidator = new PortfolioValidator();
-            ValidationResult result = portfolioValidator.Validate(portfolio);
-            if (result.IsValid)
+            if (p.ProjectImage != null)
             {
-                portfolioManager.TAdd(portfolio);
+                var resource = Directory.GetCurrentDirectory();
+                var extension = Path.GetExtension(p.ProjectImage.FileName);
+                var imageName = Guid.NewGuid() + extension;
+                var saveLocation = resource + "/wwwroot/images/projectImage/" + imageName;
+                var stream = new FileStream(saveLocation, FileMode.Create);
+                await p.ProjectImage.CopyToAsync(stream);
+                project.ImageUrl = imageName;
+            }
+
+            if (p.PlatformImage != null)
+            {
+                var resource = Directory.GetCurrentDirectory();
+                var extension = Path.GetExtension(p.PlatformImage.FileName);
+                var imageName = Guid.NewGuid() + extension;
+                var saveLocation = resource + "/wwwroot/images/platformImage/" + imageName;
+                var stream = new FileStream(saveLocation, FileMode.Create);
+                await p.PlatformImage.CopyToAsync(stream);
+                project.Platform = imageName;
+            }
+
+            project.Name = p.Name;
+            project.Value = p.Completion;
+            project.ProjectUrl = p.ProjectURL;
+
+
+            if (ModelState.IsValid)
+            {
+
+                portfolioManager.TAdd(project);
                 return RedirectToAction("Index");
+                
             }
             else
             {
-                foreach (var item in result.Errors)
-                {
-                    ModelState.AddModelError(item.PropertyName, item.ErrorMessage);
-                }
+                return View(p);
             }
+         
 
-            return View();
            
         }
 
