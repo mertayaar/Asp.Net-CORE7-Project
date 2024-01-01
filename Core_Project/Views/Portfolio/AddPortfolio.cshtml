@@ -9,8 +9,10 @@
         <div class="card-body">
             <h4 class="card-title">Add Project Form</h4>
 
-            <form class="forms-sample" method="post" enctype="multipart/form-data">
+            <form class="forms-sample" method="post" enctype="multipart/form-data" action="@Url.Action("AddPortfolio", "Portfolio")">
                 <div class="form-group">
+                    <input type="hidden" asp-for="ImageUrl" value="init" />
+                    <input type="hidden" asp-for="PlatformUrl" value="init" />
                     <div class="form-group">
                         <input type="text" class="form-control" asp-for="Name" placeholder="Project Name">
                         <span asp-validation-for="Name" class="text-danger"></span>
@@ -46,7 +48,7 @@
                     </div>
                     <button type="submit" class="btn btn-outline-primary mr-2">Submit</button>
                     <a href="/Portfolio/Index/" class="btn btn-dark">Cancel</a>
-                    
+
                 </div>
             </form>
         </div>

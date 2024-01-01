@@ -42,7 +42,7 @@ namespace Core_Project.Areas.Writer.Controllers
                     var resource = Directory.GetCurrentDirectory();
                     var extension = Path.GetExtension(userEdit.Image.FileName);
                     var imageName = Guid.NewGuid() + extension;
-                    var saveLocation = resource + "/wwwroot/userImage/" + imageName;
+                    var saveLocation = resource + "/wwwroot/images/userImage/" + imageName;
                     var stream = new FileStream(saveLocation, FileMode.Create);
                     await userEdit.Image.CopyToAsync(stream);
                     update.ImageURL = imageName;
