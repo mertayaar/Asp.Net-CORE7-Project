@@ -16,7 +16,7 @@
 <div class="p-2" id="listuser">
 
 </div>
-<br/>
+<br />
 <div class="col-md-12">
     <input type="text" class="form-control" id="inpName" placeholder="Name" />
     <br />
@@ -28,8 +28,7 @@
 </div>
 
 @section scripts{
-    <script>
-        $("#btngetalllist").click(function() {
+    <script>$("#btngetalllist").click(function () {
             $.ajax({
                 contentType: "application/json",
                 dataType: "json",
@@ -41,8 +40,7 @@
                     console.log(users);
                 }
             });
-        });
-    </script>
+        });</script>
 }
 
 <script src="~/lib/jquery/dist/jquery.js"></script>
