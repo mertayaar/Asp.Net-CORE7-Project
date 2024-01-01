@@ -26,9 +26,9 @@ namespace Core_Project.ViewComponents.Dashboard
                             Content = y.Content,
                             Id = y.WriterMessageID
                         }).OrderByDescending(x => x.Id).Take(3).ToList();
-          
-			return View(list);
+
+            return View(list);
+
 		}
 	}
 }
-

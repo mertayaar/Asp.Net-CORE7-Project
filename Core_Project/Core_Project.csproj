@@ -195,8 +195,8 @@
     <Folder Include="wwwroot\assets\fonts\" />
     <Folder Include="wwwroot\assets\images\" />
     <Folder Include="wwwroot\images\" />
-    <Folder Include="wwwroot\images\projectImage\" />
     <Folder Include="wwwroot\images\userImage\" />
+    <Folder Include="wwwroot\images\projectImage\" />
     <Folder Include="wwwroot\images\platformImage\" />
   </ItemGroup>
   <ItemGroup>
@@ -215,8 +215,8 @@
     <Content Remove="wwwroot\assets\fonts\" />
     <Content Remove="wwwroot\assets\images\" />
     <Content Remove="wwwroot\images\" />
-    <Content Remove="wwwroot\images\projectImage\" />
     <Content Remove="wwwroot\images\userImage\" />
+    <Content Remove="wwwroot\images\projectImage\" />
     <Content Remove="wwwroot\images\platformImage\" />
   </ItemGroup>
   <ItemGroup>
