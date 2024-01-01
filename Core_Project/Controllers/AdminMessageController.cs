@@ -55,11 +55,6 @@ namespace Core_Project.Controllers
                 return RedirectToAction("AdminOutbox");
             }
         }
-        [HttpGet]
-        public IActionResult AdminSendMessage()
-        {
-            return View();
-        }
 
         [HttpGet]
         public IActionResult AdminSendMessage(int id)
