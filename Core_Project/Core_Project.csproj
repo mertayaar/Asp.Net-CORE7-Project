@@ -107,6 +107,8 @@
     <None Remove="Views\ExperienceAjax\" />
     <None Remove="Views\Shared\Components\AdminSidebarProfile\" />
     <None Remove="Views\Shared\Components\AdminNavbarProfile\" />
+    <None Remove="Areas\Writer\ViewComponents\Navbar\" />
+    <None Remove="Areas\Writer\ViewComponents\Notification\" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Views\Default\" />
@@ -198,6 +200,8 @@
     <Folder Include="wwwroot\images\userImage\" />
     <Folder Include="wwwroot\images\projectImage\" />
     <Folder Include="wwwroot\images\platformImage\" />
+    <Folder Include="Areas\Writer\ViewComponents\Navbar\" />
+    <Folder Include="Areas\Writer\ViewComponents\Notification\" />
   </ItemGroup>
   <ItemGroup>
     <Content Remove="wwwroot\assets\" />
