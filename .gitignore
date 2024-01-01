@@ -10,7 +10,7 @@ autom4te.cache/
 *.tar.gz
 tarballs/
 test-results/
-/Core_Project/wwwroot/images
+/Core_Project/wwwroot/images/
 mono_crash.*
 
 *.dmg
