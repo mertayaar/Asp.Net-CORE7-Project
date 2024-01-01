@@ -12,7 +12,7 @@ tarballs/
 test-results/
 /Core_Project/wwwroot/images
 mono_crash.*
-# Mac bundle stuff
+
 *.dmg
 *.app
 
