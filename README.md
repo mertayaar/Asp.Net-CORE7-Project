@@ -36,3 +36,53 @@ https://github.com/mertayaar/Asp.Net-CORE7-Project/assets/50061565/c1376609-e0da
 
 <img width="750" alt="Page Contact" src="https://github.com/mertayaar/Asp.Net-CORE7-Project/assets/50061565/4267c850-cc93-4466-a699-579a33b7632b">
 
+# Asp.Net-CORE7-Project
+
+Welcome to the Asp.Net-CORE7-Project! This open-source web application is built with ASP.NET Core 7 and is designed to showcase best practices, providing a foundation for developing robust and scalable web applications. The project incorporates modern web development technologies, emphasizing clean architecture, modular design, and the latest features of ASP.NET Core.
+
+## Key Features
+
+- **ASP.NET Core 7 Backend:**
+  - Utilizes the latest version of ASP.NET Core for server-side development.
+
+- **Clean Architecture Approach:**
+  - Follows clean architecture principles to ensure separation of concerns.
+
+- **RESTful API Endpoints:**
+  - Implements RESTful API endpoints for efficient data retrieval and manipulation.
+
+- **Entity Framework Core with Code-First Migrations:**
+  - Utilizes Entity Framework Core for data access with a code-first approach.
+
+- **Authentication and Authorization:**
+  - Includes secure authentication and authorization mechanisms using ASP.NET Core Identity.
+
+- **Dependency Injection:**
+  - Demonstrates the use of dependency injection for scalable and maintainable code.
+
+- **Modern Frontend Technologies:**
+  - Incorporates Bootstrap and JavaScript for a contemporary and user-friendly frontend.
+
+## Technologies Used
+
+- **Backend:**
+  - ASP.NET Core 7
+  - Entity Framework Core
+  - ASP.NET Core Identity
+
+- **Frontend:**
+  - HTML, CSS
+  - Bootstrap
+  - JavaScript
+
+- **Database:**
+  - MySQL
+
+- **Version Control:**
+  - Git
+
+## Purpose
+
+This project serves as a learning resource for developers interested in mastering ASP.NET Core development practices. Feel free to explore the codebase and contribute to the project's ongoing development.
+
+Happy coding!
